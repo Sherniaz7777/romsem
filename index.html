@@ -7,11 +7,38 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="/style.css">
 </head>
-<body>  
+<body>
+    <div class="all-con">
 
- 
-         
-    <section class="Categorys">
+
+   <div class="container">
+  <div class="praktika" id="centerDiv">
+    <button id="corzinaDelete" onclick="corzinaDelete()">x</button>
+    <div class="h1corzina">
+        <h1>Корзина</h1>
+        
+    </div>
+    
+    <div class="corzina">
+        <div class="corzinka">
+
+        </div>
+        
+    </div> 
+    <div class="Zakaz-btn">
+        <div class="zakaz-btnn">
+            
+        </div>
+        
+        <button onclick="ZakazOformi()">Оформить заказ</button>
+    </div>
+
+</div>
+
+   </div>
+  
+
+<section class="Categorys">
 
                 <div class="logotip">
                         <img id="logotip-img" src="/img/Mask Group (2).png" alt="">
@@ -21,41 +48,14 @@
                      <hr>
 
                     <div class="category">
-                            <!-- <p><img src="/img/1.png" alt="">      <span id="category-home">pizza</span></p>
-                            <p><img src="/img/Сеты.png" alt="">   <span id="category-home">sets</span></p>
-                            <p><img src="/img/Вок.png" alt="">    <span id="category-home">wok</span></p>
-                            <p><img src="/img/Вок (1).png" alt=""><span id="category-home">rolls</span></p>
-                            <p><img src="/img/Вок (3).png" alt=""><span id="category-home">sishi</span></p>
-                            <p><img src="/img/Вок (7).png" alt=""><span id="category-home">drinks</span></p> -->
+
                             
                         </div>    
 
      </section>
-    <div class="corzina">
-        <!-- <h2><h1>Корзина</h1></h2>
-        <div class="cor-img-ingr">
-            <img src="https://res.cloudinary.com/dh6o5rpfe/image/upload/v1660667206/sushi-shop/Data%20base/soups/Pho_Bo_xyxyo7.png" alt="">
-            <div>
-                <h3>Самая большая Фи...</h3>
-                <div class="cor-img-ingr-1">
-                <button>
-                    -
-                </button>
-                <span>0</span>
-                <button>
-                    +
-                </button>
 
-                <h4>170com</h4>
-            </div>
-        </div>
-        </div>
-        <div class="Zakaz-btn">
-            <h2>180 Co</h2>
-            <button>Оформить заказ</button>
-        </div> -->
-    </div>
-    <div class="all-con">
+
+   
     <section class="main">
         <div class="container">
             <nav>
@@ -73,12 +73,13 @@
                     </div> 
                     
                 <div class="Reviews">
-                        <h3>Отзывы</h3>
-                        <h2>Доставка и оплата</h2>
+                        <h3 id="otzyv-btn" onclick="GetOtzyv()">Отзывы</h3>
+                        <h2 onclick="ZakazOformi()">Доставка и оплата</h2>
                     </div>
 
                 <div class="search">
-                        <img src="/img/Search_ico.png" alt="">
+                       <button id="toggleButton"><i class="bi bi-cart3"></i> <span id="CardCorzina">0</span></button>
+                        <img    src="/img/Search_ico.png" alt="">
                     </div>   
                 
              </nav>
@@ -91,25 +92,27 @@
             <div class="homes">
 
                 <div class="img-home">
-                    <img src="/img/Rectangle 1.png" alt="">
+                    <img onclick="Categorys1()" src="/img/Rectangle 1.png" alt="">
                      </div>
 
                      <div class="category-img-1">
                         
                         <div class="category-img-in-1">
-                                <img src="/img/С лососем (1).png" alt="">
+                                <img onclick="Categorys1()" src="https://res.cloudinary.com/dh6o5rpfe/image/upload/v1660571268/sushi-shop/main/Grid/Sets_arn9m7.jpg" alt="">
+                                <!-- sets -->
                             </div>
 
                         <div class="category-img-in-2">
-                                <img src="/img/С угрем.png" alt="">
-                                <img src="/img/Без мяса (2).png" alt="">
+                                <img onclick="Categorys3()" src="https://recipes.oregonlive.com/system/recipes/images/000/004/418/hero/SFS_20200508-OatmealRolls-1185.jpg?1636477983" alt="">
+                                <!-- drinks -->
+                                <img onclick="Categorys4()" src="https://res.cloudinary.com/dh6o5rpfe/image/upload/v1660155599/sushi-shop/main/Grid/Sushi_uzurzt.jpg" alt="">
                             </div>
 
                      </div>
 
                      <div class="category-img-2">
-                            <img src="/img/Фила.png" alt="">
-                            <img src="/img/Акции.png" alt="">
+                            <img id="img-category-1" onclick="Categorys2()" src="/img/С филадельфией.png" alt="">
+                            <img id="img-category-2" onclick="Categorys5()" src="https://res.cloudinary.com/dh6o5rpfe/image/upload/v1660571268/sushi-shop/main/Grid/Drinks_ulvocd.jpg" alt="">
                         </div>
 
                         <div class="new-popular">
@@ -119,28 +122,25 @@
                         </div>
 
                         <div class="carts">
-                                <!-- <div class="cart">
-                                    <img src="/img/Rectangle 3.png" alt="">
 
-                                        <h4>Саломон сет</h4>
-
-                                        <p>1050 грамм, 30 кусочков</p>
-                                            <hr>
-
-                                        <div class="price-btn">
-                                            <h2>1500 СОМ</h2>
-                                             <button>Хочу!</button>
-                                             </div>
-                                 </div> -->
                                  
                     </div>
 
                 </div>
             </div>
         </section>
+        <div class="otzyv">
+            
+
+
+        </div>
+
+
+
                  <div class="cart-tovar">
-           
-                    </div>
+
+                     </div>
+                    
 
                     <div class="container">
                         <div id="root">
@@ -204,37 +204,98 @@
         </footer>
     <div class="container">
 
+</div>
+</div>
+</div>
+<div class="zakaz-oformi">
 
-        <!-- <div class="Recom">
+    <header>
+        <div class="container">
+        <nav>
+            <div class="nav-2">
+                <img  id="Imgbtnzakaz"  src="/img/Group 13.png" alt="">
+                <p>Продолжить выбор</p>
+            </div>
 
-            <div class="Recom-Cart">
-                <img src="https://res.cloudinary.com/dh6o5rpfe/image/upload/v1660321281/sushi-shop/Data%20base/drinks/Morshinska_still_water_pl_nmnrvd.png" alt="">
-                <h2>ekmew</h2>
-                <div class="recom-btn">
-                    <h4></h4>
-                    <button>+</button>
+        <div class="nav-3">
+            <h3>Наш телефон</h3>
+            <p>+996 705 188 955</p>
+            <p>+996 555 188 955</p>
+            <div class="data-chasy">
+                <img src="/img/Часы.png" alt="">
+                <h5>работаем с 10:00 до 00:00</h5>
+            </div>
+        </div>
+    </nav>
+</div>
+    </header>
+
+    <hr>
+
+    <section class="section-1">
+        <div class="container">
+            <div class="block-1">
+                <h1>Ваши данные</h1>
+                <div class="boxes">
+
+                        <div class="box">
+
+                            <div class="box-1">
+                                <div class="tel-name">
+                                    <input id="tel" type="tel" placeholder="Телефон">
+                                    <input id="name" type="text" placeholder="Имя">
+                                </div>
+                                <br>
+                            
+                                    <div class="card-wallet">
+                                        <button class="wallet"><i class="bi bi-wallet2"></i><span>Наличными</span></button>
+                                        <button id="card"><i class="bi bi-credit-card-2-back"></i><span>Картой</span></button>
+                                    </div>
+                               
+                                <div class="summa-inp">
+                                    <!-- <p>Подготовить сдачу с</p> -->
+                                    <input id="summa" type="number" placeholder="Подготовить сдачу cумма">
+                                </div>
+                                <br>
+                                <input id="comment" type="text" placeholder="Комменатрий к заказу(необязательно)">  
+                                <!-- <p>Палочки + соусник обычные</p> -->
+                                <input id="pmcod" type="number" placeholder="Введите промокод">
+                            </div>
+                            
+            
+                            <div class="box-2">
+                                <div class="box-btn">
+                                    <button id="kurer">Курьером</button>
+                                    <button id="samvz">Самовывоз</button>
+                                </div>
+                                <br>
+                                <input id="ulisa" type="text" placeholder="Улица">
+                                <input id="dom" type="number" placeholder="Дом">
+                                <br>
+                                <input id="kv" type="number" placeholder="Кв">
+                                <input id="podezd"  type="number" placeholder="Подъезд">
+                                <input id="etaj" type="number" placeholder="Этаж">
+                                <input id="kod" type="number" placeholder="Код">
+                                <br>
+                                <div class="seichas-vremia">
+                                    <button id="seichas">На сейчас</button>
+                                <button id="vremia">На время</button>
+                                </div>
+                                <br>
+                                <input id="email" type="email" placeholder="E-mail(необязательно)">
+                            </div>
+                        </div>
+
+
+                         <button id="btn-zakaz">Оформить заказ</button>
+                    <!-- <p id="and-text">Нажимая на кнопку Оформить заказ, Вы подтверждаете свое согласие на обработку персональных данных в соответствии с Публичной оффертой</p> -->
+                   
+                    
                 </div>
             </div>
-            <div class="Recom-Cart">
-                <img src="https://res.cloudinary.com/dh6o5rpfe/image/upload/v1660321281/sushi-shop/Data%20base/drinks/Morshinska_still_water_pl_nmnrvd.png" alt="">
-                <h2>ekmew</h2>
-                <div class="recom-btn">
-                    <h4>dwede</h4>
-                    <button>+</button>
-                 </div>
-                </div>
-
-            <div class="Recom-Cart">
-                <img src="https://res.cloudinary.com/dh6o5rpfe/image/upload/v1660321281/sushi-shop/Data%20base/drinks/Morshinska_still_water_pl_nmnrvd.png" alt="">
-                <h2>ekmew</h2>
-                <div class="recom-btn">
-                    <h4>ededed</h4>
-                    <button>+</button>
-                    </div>
-                 </div>
-</div> -->
+        </div>
+    </section>
 </div>
-       </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
